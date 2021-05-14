@@ -1,0 +1,16 @@
+[user]
+	name = Pietro Bondioli
+	email = pietrobondiolideveloper@gmail.com
+[core]
+	editor = vim
+[alias]
+  	s = status
+  	d = diff
+  	c = commit
+  	co = checkout
+  	br = branch
+  	last = log -1 HEAD
+  	cane = commit --amend --no-edit
+  	lo = log --oneline -n 10
+  	pr = pull --rebase
+  	pom = push origin master

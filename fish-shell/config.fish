@@ -1,4 +1,4 @@
-# Fish config
+# Fish Config
 
 function fish_greeting
         fortune -a -n 512 -s | cowsay
@@ -59,10 +59,14 @@ function rm
         command rm -v --preserve-root $argv
 end
 
+function rmd
+        command rm -v -r --preserve-root $argv
+end
+
 abbr rmall "rm -r"
 
 function mkdir
-        command mkdir -p -v
+        command mkdir -p -v $argv
 end
 
 function reboot

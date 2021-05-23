@@ -13,14 +13,15 @@ function fish_prompt
         printf "@"
         set_color cyan
         printf "%s" "$hostname"
-        printf " "
+        set_color blue
+        printf " - "
         set_color magenta
         printf "%s" "$PWD"
         set_color red --bold
         printf "]"
         set_color normal --bold
         printf (fish_git_prompt)
-        set_color green --bold
+        set_color green
         printf "\$"
         printf " "
         set_color normal
@@ -35,8 +36,12 @@ abbr p "sudo pacman"
 abbr ss "sudo systemctl"
 abbr ka "killall"
 
+function grep
+        command grep --color=auto $argv
+end
+
 function ls
-        command ls -h -l --color=auto $argv
+        command ls -h -l -N --color=auto --group-directories-first $argv
 end
 
 abbr ls. "ls -a"
@@ -50,7 +55,7 @@ end
 abbr exa. "exa -a"
 
 function exat
-        exa --tree --level=$argv
+        exa --tree --level=$argv[1] $argv[2..-1]
 end
 
 abbr exaall "exa -a -tree"
@@ -75,6 +80,15 @@ end
 
 function shutdown
         sudo /sbin/shutdown
+end
+
+
+abbr v "vim"
+
+abbr sv "sudo vim"
+
+function www
+        python -m SimpleHTTPServer 8000
 end
 
 # Network
@@ -105,7 +119,3 @@ abbr dcd "docker-compose down"
 
 
 # Util
-
-function www
-        python -m SimpleHTTPServer 8000
-end

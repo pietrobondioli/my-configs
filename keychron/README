@@ -1,3 +1,5 @@
 # PATH
 
 /etc/modprobe.d/hid_apple.conf
+
+In order to apply the change to initial ramdisk make sure you have modconf included in `HOOKS` variable on mkinitcpio config (/etc/mkinitcpio.conf), and then you'll need to regenerate initramfs: `sudo mkinitcpio -P`

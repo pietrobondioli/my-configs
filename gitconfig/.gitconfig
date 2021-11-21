@@ -1,16 +1,24 @@
 [user]
 	name = Pietro Bondioli
 	email = pietrobondiolideveloper@gmail.com
+[color]
+  ui = auto
 [core]
+	pager = less -+FRSX -FRX
 	editor = vim
+[log]
+	abbrevCommit = true
+	date = iso
 [alias]
+	aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
   	s = status
-  	d = diff
   	c = commit
+  	cane = commit --amend --no-edit
   	co = checkout
   	br = branch
+  	d = diff
   	last = log -1 HEAD
-  	cane = commit --amend --no-edit
   	lo = log --oneline -n 10
+	logall = log --oneline --graph --all
   	pr = pull --rebase
-  	pom = push origin master
+  	pom = push origin main

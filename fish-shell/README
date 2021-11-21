@@ -1,9 +1,0 @@
-# PATH
-
-/home/$USER/.config/fish/config.fish
-
-## Fish shell
-
-Installing on arch linux: `sudo pacman -S fish`
-
-Make fish default shell: `chsh -s /bin/fish`
